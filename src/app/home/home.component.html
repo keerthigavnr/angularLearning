@@ -1,0 +1,30 @@
+<div class="container-fluid">
+  <div class="text-end mt-2">
+    <button class="btn btn-primary mt-5" (click)="openAddModal()">
+      <i class="fa-solid fa-plus"></i>Add
+    </button>
+  </div>
+  <app-employee-table
+    [data]="employeeData"
+    (edit)="openEditModal($event)"
+    (view)="openViewModal($event)"
+    (delete)="deleteEmployee($event)"
+  >
+  </app-employee-table>
+
+  <app-add-edit-employee-modal
+    *ngIf="isAddEditModalOpen"
+    [isEditMode]="isEditMode"
+    [employee]="selectedEmployee"
+    (save)="onSave($event)"
+    (close)="closeModals()"
+  >
+  </app-add-edit-employee-modal>
+
+  <app-view-employee-modal
+    *ngIf="isViewModalOpen"
+    [employee]="selectedEmployee"
+    (close)="closeModals()"
+  >
+  </app-view-employee-modal>
+</div>

@@ -1,0 +1,22 @@
+<div class="modal" [style.display]="'block'">
+  <div class="modal-dialog modal-dialog-centered">
+    <h2>{{ isEditMode ? "Edit Employee" : "Add Employee" }}</h2>
+    <form [formGroup]="employeeForm" (ngSubmit)="onSave()">
+      <label>Name</label>
+      <input formControlName="name" type="text" />
+      <label>Position</label>
+      <input formControlName="position" placeholder="Position" />
+
+      <label>Department</label>
+      <input formControlName="department" placeholder="Department" />
+
+      <label>Email</label>
+      <input formControlName="email" placeholder="Email" />
+
+      <button type="submit" [disabled]="employeeForm.invalid">Save</button>
+
+      <button type="button" (click)="onClose()">Cancel</button>
+    </form>
+  </div>
+  >
+</div>

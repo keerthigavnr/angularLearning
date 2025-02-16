@@ -1,0 +1,54 @@
+<div class="modal" [style.display]="'block'" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Employee Details</h5>
+        <button type="button" class="btn-close" (click)="onClose()"></button>
+      </div>
+
+      <div class="modal-body" *ngIf="employee">
+        <div class="row">
+          <div class="col-md-6">
+            <label class="fw-bold">Name:</label>
+            <p>{{ employee.name }}</p>
+          </div>
+          <div class="col-md-6">
+            <label class="fw-bold">Position:</label>
+            <p>{{ employee.designation }}</p>
+          </div>
+          <div class="col-md-6">
+            <label class="fw-bold">Email:</label>
+            <p>{{ employee.email }}</p>
+          </div>
+          <div class="col-md-6">
+            <label class="fw-bold">Department:</label>
+            <p>{{ employee.department }}</p>
+          </div>
+          <div class="col-md-6">
+            <label class="fw-bold">Phone:</label>
+            <p>{{ employee.phone }}</p>
+          </div>
+          <div class="col-md-6">
+            <label class="fw-bold">Address:</label>
+            <p>{{ employee.address }}</p>
+          </div>
+          <div class="col-md-6">
+            <label class="fw-bold">Salary:</label>
+            <p>{{ employee.salary | currency : "INR" }}</p>
+          </div>
+          <div class="col-md-6">
+            <label class="fw-bold">Date of Joining:</label>
+            <p>{{ employee.doj | date : "mediumDate" }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="onClose()">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal-backdrop fade show"></div>
